@@ -6,7 +6,15 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const saltRounds = 10;
 
+const cors = require('cors');
+const apiUrl = process.env.NODE_ENV === 'production' ? 'https://database2243-bbd2cyc0cff4dgh9.eastasia-01.azurewebsites.net' : 'http://localhost:3000';
+
 const uri = "mongodb+srv://hnisahh:hanisah123@cluster0.3d55y.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
+app.use(cors({
+  origin: 'https://database2243-bbd2cyc0cff4dgh9.eastasia-01.azurewebsites.net',
+  methods: 'GET,POST',
+}));
 
 const client = new MongoClient(uri, {
     serverApi: {
