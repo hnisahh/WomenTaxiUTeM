@@ -8,7 +8,6 @@ const saltRounds = 10;
 
 const uri = "mongodb+srv://hnisahh:hanisah123@cluster0.3d55y.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
-
 const client = new MongoClient(uri, {
     serverApi: {
         version: ServerApiVersion.v1,
